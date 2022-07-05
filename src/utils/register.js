@@ -3,7 +3,6 @@ import Vue from 'vue';
 const components = require.context('@/components', true, /\.vue$/);
 components.keys().forEach((fileName) => {
   const component = components(fileName).default;
-  console.log(component);
   Vue.component(
     component.name || fileName.replace(/\.\/(.*)\.vue/, '$1'),
     component
